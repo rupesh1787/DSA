@@ -11,8 +11,8 @@ class FoodRatings {
     private final Map<String, Integer> foodToRating = new HashMap<>();
     private final Map<String, PriorityQueue<Entry>> cuisineToHeap = new HashMap<>();
     private final Comparator<Entry> cmp = (a, b) -> {
-        if (a.rating != b.rating) return b.rating - a.rating; // higher rating first
-        return a.food.compareTo(b.food);                     // lexicographically smaller first
+        if (a.rating != b.rating) return b.rating - a.rating;
+        return a.food.compareTo(b.food);                     
     };
 
     public FoodRatings(String[] foods, String[] cuisines, int[] ratings) {
@@ -39,13 +39,13 @@ class FoodRatings {
 
     public String highestRated(String cuisine) {
         PriorityQueue<Entry> pq = cuisineToHeap.get(cuisine);
-        // remove outdated entries until top matches current rating
+        
         while (!pq.isEmpty()) {
             Entry top = pq.peek();
             int current = foodToRating.get(top.food);
             if (top.rating == current) return top.food;
-            pq.poll(); // outdated snapshot
+            pq.poll(); 
         }
-        return ""; // shouldn't happen for valid input
+        return ""; 
     }
 }
