@@ -1,15 +1,12 @@
 class Solution {
     public boolean isPalindrome(int x) {
         String str = String.valueOf(x);
-         int left = 0;
-         int right = str.length()-1;
-         while(left<right){
-            if(str.charAt(left)!=str.charAt(right)){
+        int n = str.length();
+        for(int i =0;i<str.length()/2;i++){
+            if(str.charAt(i)!=str.charAt(n-i-1)){
                 return false;
             }
-            left++;
-            right--;
-         }   
-         return true;
+        }
+        return true;
     }
 }
