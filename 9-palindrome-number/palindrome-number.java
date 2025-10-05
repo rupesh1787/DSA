@@ -1,12 +1,21 @@
 class Solution {
     public boolean isPalindrome(int x) {
-        String str = String.valueOf(x);
-        int n = str.length();
-        for(int i =0;i<str.length()/2;i++){
-            if(str.charAt(i)!=str.charAt(n-i-1)){
-                return false;
-            }
+        if(x<0){
+            return false;
+
         }
-        return true;
+        else{
+            return x == reverse(x);
+        }
+        
+    }
+    public int reverse(int n){
+        int reverse = 0;
+        while(n>0){
+            int remainder = n%10;
+            reverse = reverse*10+remainder;
+            n/=10;
+        }
+        return reverse;
     }
 }
