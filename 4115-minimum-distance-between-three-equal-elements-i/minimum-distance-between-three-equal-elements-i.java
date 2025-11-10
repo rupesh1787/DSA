@@ -7,7 +7,7 @@ class Solution {
             for(int j=i+1;j<n-1;j++){
                 for(int k=j+1;k<n;k++){
                     if(nums[i]==nums[j] && nums[j]==nums[k]){
-                        x = Math.abs(i-j)+Math.abs(j-k)+Math.abs(k-i);
+                        x = 2*(k-i);
                         if(x<ans){
                             ans = x;
                         }
