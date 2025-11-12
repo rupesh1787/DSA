@@ -7,14 +7,14 @@ class Solution {
 
         while(i<j){
             int sum = nums[i]+nums[j];
-            if(sum>max){
-                max = sum;
-            }
+            max = Math.max(sum,max);
+            
             i++;
             j--;
-
-
         }
+
+
+        
         return max;
     }
 }
