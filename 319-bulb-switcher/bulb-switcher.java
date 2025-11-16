@@ -1,14 +1,7 @@
 class Solution {
     public int bulbSwitch(int n) {
-        
-       
-        
-        int ans  = 0;
-        for(long i=1;i<=n;i++){
-               if(i*i<=n){
-                  ans++;
-               }
-        }
+        int ans = (int)Math.sqrt(n);
         return ans;
+       
     }
 }
