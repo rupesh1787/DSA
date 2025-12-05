@@ -11,9 +11,8 @@ class Solution {
         for(int i=0;i<nums.length-1;i++){
                left+=nums[i];
                right = sum-left;
-               int diff = right-left;
-               if(diff%2==0){
-                   count++;
+               if(left%2==right%2){
+                count++;
                }
         }
         return count;
