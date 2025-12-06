@@ -12,13 +12,11 @@ class Solution {
         }
         int collisions = 0;
         while(i<=j){
-            if(ch[i] == 'L' || ch[i]=='R'){
-                collisions++;
-                i++;
-            }
-            else{
-                i++;
-            }
+           if(ch[i]!='S'){
+              collisions++;
+              
+           }
+           i++;
         }
         return collisions;
     }
