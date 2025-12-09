@@ -1,12 +1,13 @@
 class Solution {
     public int missingNumber(int[] nums) {
-        int  n = nums.length;
-        int sum = n*(n+1)/2;
-        int actual = 0;
-        for(int i=0;i<n;i++){
-            actual+=nums[i];
-
-        }
-        return sum-actual;
+           int n = nums.length;
+           int max = n*(n+1)/2;
+           int sum = 0;
+           for(int i=0;i<n;i++){
+                sum+=nums[i];
+           }
+          return max-sum;          
     }
 }
+
+//Time complexity --> o(n).
