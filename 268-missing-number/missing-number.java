@@ -1,14 +1,14 @@
 class Solution {
     public int missingNumber(int[] nums) {
-        
-        // sorting se ho jaata 
-        Arrays.sort(nums);
-        for(int i=0;i<nums.length;i++){
-              if(nums[i]!=i){
-                return i;
-              }
+        // Xor --> a^a = 0
+        // a^0 = a , xor --> associative , commutative 
+        int ans  = 0;
+        for(int i=1;i<=nums.length;i++){
+            ans = ans^i;
         }
-
-        return nums.length;
+        for(int i=0;i<nums.length;i++){
+            ans = ans^nums[i];
+        }
+        return ans;       
     } 
 }
