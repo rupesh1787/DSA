@@ -1,10 +1,10 @@
 class Solution {
     public int maximumWealth(int[][] accounts) {
           int maxrich = 0;
-         for(int i=0;i<accounts.length;i++){
+         for(int customer[]:accounts){
               int sum = 0;
-              for(int j=0;j<accounts[i].length;j++){
-                   sum+=accounts[i][j];
+              for(int money:customer){
+                   sum+=money;
                   maxrich  = Math.max(maxrich , sum);
               }
          }
