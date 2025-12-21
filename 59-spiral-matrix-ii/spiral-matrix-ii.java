@@ -1,43 +1,44 @@
 class Solution {
     public int[][] generateMatrix(int n) {
-            int matrix[][] = new int[n][n];
-            int top = 0;    // dir = 0 (left to right) top++;
-            int bottom = n-1; //dir = 1(top to bottom) right--;
-            int left = 0; // dir = 2(rt to left) bottom--;
-            int right = n-1; //dir = 3 (bottom to up)left++;
-            int dir = 0;
-            int num = 1;
-            while(top<=bottom && left<=right){
-                if(dir==0){
-                    for(int i=left;i<=right;i++){
-                          matrix[top][i] = num++;
-                    }
-                    top++;
-                }
-                if( dir==1){
-                    for(int i=top;i<=bottom;i++){
-                           matrix[i][right] = num++;
-                    }
-                    right--;
-                }
-                if(dir==2){
-                    for(int i=right;i>=left;i--){
-                          matrix[bottom][i] = num++;
-                    }
-                    bottom--;
-                }
-                if(dir==3){
-                    for(int i=bottom;i>=top;i--){
-                        matrix[i][left] = num++;
-                    }
-                    left++;
-                }
-                dir++;
 
-                if(dir==4){
-                    dir = 0;
+        int[][] matrix = new int[n][n];
+
+        int top = 0, bottom = n - 1;
+        int left = 0, right = n - 1;
+
+        int dir = 0;
+        int num = 1;
+
+        while (top <= bottom && left <= right) {
+
+            if (dir == 0) { // left → right
+                for (int i = left; i <= right; i++) {
+                    matrix[top][i] = num++;
                 }
+                top++;
             }
-            return matrix;
+            else if (dir == 1) { // top → bottom
+                for (int i = top; i <= bottom; i++) {
+                    matrix[i][right] = num++;
+                }
+                right--;
+            }
+            else if (dir == 2) { // right → left
+                for (int i = right; i >= left; i--) {
+                    matrix[bottom][i] = num++;
+                }
+                bottom--;
+            }
+            else { // bottom → top
+                for (int i = bottom; i >= top; i--) {
+                    matrix[i][left] = num++;
+                }
+                left++;
+            }
+
+            dir = (dir + 1) % 4;
+        }
+
+        return matrix;
     }
 }
