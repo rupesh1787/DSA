@@ -4,15 +4,10 @@ class Solution {
         int score = 0;
         int i = boxTypes.length-1;
         while(truckSize!=0 && i>=0){
-            if(truckSize>=boxTypes[i][0]){
-                score+=boxTypes[i][0]*boxTypes[i][1];
-                truckSize-=boxTypes[i][0];
-            }
-            else{
-                 score+=truckSize*boxTypes[i][1];
-                 truckSize = 0;
-            }
+            int ans =Math.min(truckSize , boxTypes[i][0]);
+            score+=ans*boxTypes[i][1];
             i--;
+            truckSize-=ans;
         }
         return score;
     }
