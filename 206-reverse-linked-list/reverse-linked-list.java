@@ -21,3 +21,26 @@ class Solution {
           return prev;
     }
 }
+/*
+class Solution {
+    public ListNode reverseList(ListNode head) {
+
+         Base case:
+         1) empty list
+         2) single node list
+        if (head == null || head.next == null) {
+            return head;
+        }
+
+         Reverse the rest of the list
+        ListNode last = reverseList(head.next);
+
+         Fix the current node
+        head.next.next = head;  // make next node point back to current
+        head.next = null;       // break original link
+
+        // last is the new head
+        return last;
+    }
+}
+*/
