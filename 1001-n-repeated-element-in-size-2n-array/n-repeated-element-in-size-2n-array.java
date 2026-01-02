@@ -1,20 +1,14 @@
 class Solution {
     public int repeatedNTimes(int[] nums) {
-            int n = nums.length/2;
-            Arrays.sort(nums);
-            int count = 1;
-            for(int i=1;i<2*n;i++){
-                  if(nums[i]==nums[i-1]){
-                      count+=1;
-                      if(count==n){
-                          return nums[i];
-                
-                      }
-                  }
-                  else{
-                    count = 1;
-                  }
+        HashSet<Integer> set = new HashSet<>();
+        for(int i=0;i<nums.length;i++){
+            if(set.contains(nums[i])){
+                return nums[i];
             }
-            return -1;
+            else{
+                set.add(nums[i]);
+            }
+        }
+        return -1;
     }
 }
