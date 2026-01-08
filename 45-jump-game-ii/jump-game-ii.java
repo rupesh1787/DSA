@@ -9,8 +9,9 @@ class Solution {
             range = Math.max(range, i + nums[i]);
 
             if (i == lastjumpidx) {
-                totaljump++;
+               
                 lastjumpidx = range;
+                 totaljump++;
             }
         }
         return totaljump;
