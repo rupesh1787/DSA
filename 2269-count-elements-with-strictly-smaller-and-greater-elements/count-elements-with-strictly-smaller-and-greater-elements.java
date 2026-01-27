@@ -17,7 +17,7 @@ class Solution {
                       break;
                }
            }
-           if(idx1==-1||idx2==-1 || idx2<idx1){
+           if(idx1==-1||idx2==-1 ){
                 return 0;
            }
            return idx2-idx1+1;
