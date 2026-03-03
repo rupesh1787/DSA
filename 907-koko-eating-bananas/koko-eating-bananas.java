@@ -3,11 +3,11 @@ class Solution {
           int actualhours = 0;
           for(int x:piles){
             actualhours+=x/mid;
-            if(x%mid!=0){
+            if(x%mid!=0){    // extra hours ke liye
                 actualhours++;
             }
           }
-          return actualhours<=h;
+          return actualhours<=h;  // if it satisfy we are good to go
           
     }
     public int minEatingSpeed(int[] piles, int h) {
@@ -22,7 +22,7 @@ class Solution {
              while(l<r){
                 int mid = l+(r-l)/2;
                 if(caneat(piles , mid , h)){
-                    r = mid;
+                    r = mid;  // agar wo kr paa rha toh usse bade bhi kr hi paa rhe hoge , not need to check will look for smaller
                 }
                 else{
                     l = mid+1;
