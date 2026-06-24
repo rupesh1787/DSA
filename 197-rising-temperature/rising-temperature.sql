@@ -1,9 +1,6 @@
 # Write your MySQL query statement below
-# COMPARE --> SQL MAI AISE NORMALLY COMPARE NHI KR SKTE SO WHAT WE DO IS SELF JOIN THAT TABLE 
-# AND THEN COMAPRE 
-
-select w.id
-from weather w , weather w2
-where datediff(w.recordDate , w2.recordDate) = 1
-and w.temperature > w2.temperature 
+select w1.id from Weather w
+join Weather w1 
+on DATEDIFF(w1.recordDate , w.recordDate) = 1
+where w1.temperature>w.temperature;
 
